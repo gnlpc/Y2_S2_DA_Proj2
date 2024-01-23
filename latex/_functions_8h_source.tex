@@ -1,0 +1,125 @@
+\doxysection{Functions.\+h}
+\hypertarget{_functions_8h_source}{}\label{_functions_8h_source}\index{Functions.h@{Functions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ gonca\ on\ 05/05/2023.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TRABALHO2\_FUNCTIONS\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TRABALHO2\_FUNCTIONS\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <locale>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Graph.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}ToyGraph.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}LoadFiles.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *\ Function\ to\ calculate\ distance\ from\ a\ vector\ in\ a\ certain\ graph}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_functions_8cpp_a72cd4f992617c168df1547c63c0b78a0}{calculate\_distance}}(vector<int>\&\ path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *Function\ that\ does\ brute\ force\ for\ every\ possibility\ in\ the\ graph\ and\ returns\ the\ minimum\ distance}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_functions_8cpp_a08b6e8baf893bc41557aedf0908acd1c}{backtrack}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph,\ vector\ <int>\ path,\ vector<bool>\&\ visited,\ \textcolor{keywordtype}{float}\ total\_distance,\ \textcolor{keywordtype}{float}\ min\_distance,\ vector<int>\ \&path\_min)\ ;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ Function\ that\ arranges\ and\ prepares\ the\ backtrack\ and\ sets\ the\ timer}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *\ to\ be\ called\ for\ the\ exercise\ 4.1}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_functions_8cpp_a3b601d2d88bd7c66e0128339b76f76ac}{tsp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ Function\ that\ goes\ through\ the\ graoh\ and\ finds\ the\ minimum\ distance\ between\ the\ edges}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ returns\ a\ vector\ with\ the\ path\ that\ adds\ the\ min\ distance}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ vector<int>\ \mbox{\hyperlink{_functions_8cpp_a88f7452ce1ec400ca3e28e179297c7df}{min\_path}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *\ Function\ that\ returns\ the\ minimum\ distance\ between\ the\ edges\ not\ present\ in\ the\ path}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_functions_8cpp_abdf4c29787da9116130f1b7af547ce32}{find\_minimum}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\ \&graph,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ vector<int>\ path);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *\ Function\ that\ checks\ if\ it\ is\ faster\ to\ go\ from\ A\ to\ B\ or\ from\ A\ to\ B\ to\ C}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ *\ if\ it\ is\ faster,\ then\ remove\ B}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ After\ removing,\ checks\ all\ the\ elements\ not\ present\ in\ the\ path}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *\ if\ the\ two\ lightest\ edges\ are\ consecutive\ in\ the\ path\ adds\ it\ in\ the\ middle,\ and\ checks\ this\ first\ for\ every\ element}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ *\ if\ there\ is\ still\ elements\ missing\ in\ the\ path,\ does\ brute\ force\ for\ the\ best\ solution}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ vector<int>\ \mbox{\hyperlink{_functions_8cpp_aa1e12d2bd8b6d24bb9b34f6481872f36}{triangular}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph,\ vector<int>\&\ min);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ *\ Function\ to\ remove\ elements\ duplicated\ in\ a\ vector}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_functions_8cpp_a34b392c552c260b1480085de813e7eb5}{removeDuplicates}}(std::vector<int>\&\ vec);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ *\ Function\ that\ returns\ a\ vector\ of\ elements\ not\ present\ in\ the\ path}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ vector<int>\ \mbox{\hyperlink{_functions_8cpp_af262e10981f9e1efe05aafc20e09466d}{notUsed}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph,\ vector<int>\&\ min);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *\ Auxiliar\ function\ to\ insert\ the\ elements\ that\ are\ not\ yet\ present\ in\ the\ path}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_functions_8cpp_a42f6a51c0ac43cb2a488d6ac3611f8eb}{insertNotUsed}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph,\ vector<int>\&\ path,\ vector<int>\ notUsed);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ *\ Exercise\ 4.2\ function}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_functions_8cpp_a8271be34923594678165804f21c3aaf6}{triangularApproximationH}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ *\ Function\ that\ calls\ all\ function\ needed\ in\ the\ 4.3\ exercise\ and\ starts\ the\ timer\ and\ stops\ it}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ *\ prints\ the\ values}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ *\ to\ be\ called\ for\ the\ exercise\ 4.3}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_functions_8cpp_acac5fd7153baa6dad093fb06d8847972}{join4}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ vector<int>\ \mbox{\hyperlink{_functions_8cpp_aaf2c2cd208a3e3d42cde2a1a3f370131}{linKernighan}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ vector<int>\ \mbox{\hyperlink{_functions_8cpp_ad5e002429adf8666e613c69fb96428fe}{PerformLinKernighanOptimization}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_graph}{Graph}}\&\ graph,\ \textcolor{keyword}{const}\ std::vector<int>\&\ tour,\ \textcolor{keywordtype}{int}\ u,\ \textcolor{keywordtype}{int}\ v,\ vector<vector<float>>\ distances);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TRABALHO2\_FUNCTIONS\_H}}
+
+\end{DoxyCode}

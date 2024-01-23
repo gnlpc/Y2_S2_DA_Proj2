@@ -1,0 +1,92 @@
+\doxysection{Vertex\+Edge.\+h}
+\hypertarget{_vertex_edge_8h_source}{}\label{_vertex_edge_8h_source}\index{VertexEdge.h@{VertexEdge.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ gonca\ on\ 02/05/2023.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ TRABALHO2\_VERTEXEDGE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ TRABALHO2\_VERTEXEDGE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}MutablePriorityQueue.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edge}{Edge}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vertex}{Vertex}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MAXNUM\ std::numeric\_limits<double>::max()}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edge}{Edge}}\{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}(\mbox{\hyperlink{class_vertex}{Vertex}}\ *orig,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *dest,\ \textcolor{keywordtype}{float}\ dist);}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}*\ getDest()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}*\ getOrig()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ getDist()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ getWeight()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *dest;}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}\ *orig;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{float}\ dist;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ weight;}
+\DoxyCodeLine{00037\ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vertex}{Vertex}}\{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{double}\ longitude,\ \textcolor{keywordtype}{double}\ latitude);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{int}\ getID()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ vector<Edge*>\ getAdj()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ isVisited()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ setVisited(\textcolor{keywordtype}{bool}\ \_bool);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{float}\ getDist()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ setDist\ (\textcolor{keywordtype}{float}\ dist);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *\ addEdge\ (\mbox{\hyperlink{class_vertex}{Vertex}}\ *orig,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *dest,\ \textcolor{keywordtype}{float}\ dist);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *\ getEdge(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *dest)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ removeEdge(\mbox{\hyperlink{class_vertex}{Vertex}}\ *\ orig,\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *dest);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ preorderDFS(vector<unsigned>\ \&preorder);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ distance(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_vertex}{Vertex}}\ *destination)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\mbox{\hyperlink{class_vertex}{Vertex}}\ \&\ vertex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *getPath()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ setPath(\mbox{\hyperlink{class_edge}{Edge}}\ *path);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ getLongitude()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ getLatitude()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mutable_priority_queue}{MutablePriorityQueue}}<\mbox{\hyperlink{class_vertex}{Vertex}}>;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00071\ \ \ \ \ vector<Edge\ *>\ adj;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{float}\ dist;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ visited\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{double}\ longitude;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{double}\ latitude;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ queueIndex\ =\ 0;}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_edge}{Edge}}\ *path\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TRABALHO2\_VERTEXEDGE\_H}}
+\DoxyCodeLine{00086\ }
+
+\end{DoxyCode}

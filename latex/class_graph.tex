@@ -1,0 +1,41 @@
+\doxysection{Graph Class Reference}
+\hypertarget{class_graph}{}\label{class_graph}\index{Graph@{Graph}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_graph_ae40dba49da05b94597ba532fa15f7f40}\label{class_graph_ae40dba49da05b94597ba532fa15f7f40} 
+bool {\bfseries add\+Vertex} (const int id)
+\item 
+\Hypertarget{class_graph_ac4f8c1ba76929f32fa7fef861652aa60}\label{class_graph_ac4f8c1ba76929f32fa7fef861652aa60} 
+bool {\bfseries add\+Vertex} (const \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*}vertex)
+\item 
+\Hypertarget{class_graph_a8b7c74a9b273f8977ce694fe08927693}\label{class_graph_a8b7c74a9b273f8977ce694fe08927693} 
+bool {\bfseries add\+Edge} (const int \&source, const int \&dest, double w)
+\item 
+\Hypertarget{class_graph_a56576f9c2ee0afadc4b77dcbe3acb704}\label{class_graph_a56576f9c2ee0afadc4b77dcbe3acb704} 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries get\+Vertex\+Set} () const
+\item 
+\Hypertarget{class_graph_ae071fa58216a8daaae6ac1d6fbb6d3d3}\label{class_graph_ae071fa58216a8daaae6ac1d6fbb6d3d3} 
+void {\bfseries delete\+Graph} ()
+\item 
+\Hypertarget{class_graph_a147b381f1839828501f39a0267df734e}\label{class_graph_a147b381f1839828501f39a0267df734e} 
+bool {\bfseries has\+\_\+edge} (int u, int v) const
+\item 
+\Hypertarget{class_graph_abb71e8b3725df959721266bccec95f76}\label{class_graph_abb71e8b3725df959721266bccec95f76} 
+pair$<$ \mbox{\hyperlink{class_graph}{Graph}}, double $>$ {\bfseries prim} () const
+\item 
+\Hypertarget{class_graph_a147fdb92acf724f8e926cd6b212b9159}\label{class_graph_a147fdb92acf724f8e926cd6b212b9159} 
+pair$<$ double, double $>$ {\bfseries tsp\+Tri\+Approx} (vector$<$ unsigned $>$ \&path) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_graph_aef515bc3a03311ede5207f0eb7c2096c}\label{class_graph_aef515bc3a03311ede5207f0eb7c2096c} 
+static \mbox{\hyperlink{class_vertex}{Vertex}} \texorpdfstring{$\ast$}{*} {\bfseries find\+Vertex} (const int \&id)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Graph.\+h\item 
+\mbox{\hyperlink{_graph_8cpp}{Graph.\+cpp}}\end{DoxyCompactItemize}

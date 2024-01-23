@@ -1,0 +1,299 @@
+\doxysection{Functions.\+cpp File Reference}
+\hypertarget{_functions_8cpp}{}\label{_functions_8cpp}\index{Functions.cpp@{Functions.cpp}}
+
+
+The file with the functions that solve the exercises.  
+
+
+{\ttfamily \#include \"{}Functions.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{_functions_8cpp_a72cd4f992617c168df1547c63c0b78a0}{calculate\+\_\+distance}} (vector$<$ int $>$ \&path, const \mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Calculates the total distance of a path. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_functions_8cpp_a08b6e8baf893bc41557aedf0908acd1c}{backtrack}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph, vector$<$ int $>$ path, vector$<$ bool $>$ \&visited, float total\+\_\+distance, float min\+\_\+distance, vector$<$ int $>$ \&path\+\_\+min)
+\begin{DoxyCompactList}\small\item\em Gets the minimum distance using backtracking @complexity O(n) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_functions_8cpp_a3b601d2d88bd7c66e0128339b76f76ac}{tsp}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Main function for the TSP of exercise 4.\+1 @complexity O(n) \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{_functions_8cpp_a88f7452ce1ec400ca3e28e179297c7df}{min\+\_\+path}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Function that goes through the graph and finds the minimum distance between the edges returns a vector with the path that adds the min distance @complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}3) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_functions_8cpp_abdf4c29787da9116130f1b7af547ce32}{find\+\_\+minimum}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph, int id, vector$<$ int $>$ path)
+\begin{DoxyCompactList}\small\item\em Function that returns the minimum distance between the edges not present in the path @complexity O(n) \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{_functions_8cpp_aa1e12d2bd8b6d24bb9b34f6481872f36}{triangular}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph, vector$<$ int $>$ \&min)
+\begin{DoxyCompactList}\small\item\em Function that checks if it is faster to go from A to B or from A to B to C if it is faster, then remove B. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_functions_8cpp_a34b392c552c260b1480085de813e7eb5}{remove\+Duplicates}} (std\+::vector$<$ int $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Function to remove elements duplicated in a vector @complexity O(\+N) \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{_functions_8cpp_af262e10981f9e1efe05aafc20e09466d}{not\+Used}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph, vector$<$ int $>$ \&min)
+\begin{DoxyCompactList}\small\item\em Function that gets a vector of elements not present in the path @complexity O(\+N) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_functions_8cpp_a42f6a51c0ac43cb2a488d6ac3611f8eb}{insert\+Not\+Used}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph, vector$<$ int $>$ \&path, vector$<$ int $>$ \mbox{\hyperlink{_functions_8cpp_af262e10981f9e1efe05aafc20e09466d}{not\+Used}})
+\begin{DoxyCompactList}\small\item\em Auxiliar function to insert the elements that are not yet present in the path @complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}2) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_functions_8cpp_a8271be34923594678165804f21c3aaf6}{triangular\+ApproximationH}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Exercise 4.\+2 main function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_functions_8cpp_acac5fd7153baa6dad093fb06d8847972}{join4}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Function that calls all function needed in the 4.\+3 exercise and starts the timer and stops it prints the values. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{_functions_8cpp_aaf2c2cd208a3e3d42cde2a1a3f370131}{lin\+Kernighan}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Applies the Lin-\/\+Kernighan heuristic algorithm to find an improved tour for the Traveling Salesperson Problem (TSP) on a given graph. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \mbox{\hyperlink{_functions_8cpp_ad5e002429adf8666e613c69fb96428fe}{Perform\+Lin\+Kernighan\+Optimization}} (const \mbox{\hyperlink{class_graph}{Graph}} \&graph, const std\+::vector$<$ int $>$ \&tour, int u, int v, vector$<$ vector$<$ float $>$ $>$ distances)
+\begin{DoxyCompactList}\small\item\em Performs a local optimization step using Lin-\/\+Kernighan improvement rules on a given tour within the Lin-\/\+Kernighan heuristic algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The file with the functions that solve the exercises. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_functions_8cpp_a08b6e8baf893bc41557aedf0908acd1c}\label{_functions_8cpp_a08b6e8baf893bc41557aedf0908acd1c} 
+\index{Functions.cpp@{Functions.cpp}!backtrack@{backtrack}}
+\index{backtrack@{backtrack}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{backtrack()}{backtrack()}}
+{\footnotesize\ttfamily float backtrack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{vector$<$ int $>$}]{path,  }\item[{vector$<$ bool $>$ \&}]{visited,  }\item[{float}]{total\+\_\+distance,  }\item[{float}]{min\+\_\+distance,  }\item[{vector$<$ int $>$ \&}]{path\+\_\+min }\end{DoxyParamCaption})}
+
+
+
+Gets the minimum distance using backtracking @complexity O(n) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+{\em path} & \\
+\hline
+{\em visited} & \\
+\hline
+{\em total\+\_\+distance} & \\
+\hline
+{\em min\+\_\+distance} & \\
+\hline
+{\em path\+\_\+min} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the minimum distance 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_a72cd4f992617c168df1547c63c0b78a0}\label{_functions_8cpp_a72cd4f992617c168df1547c63c0b78a0} 
+\index{Functions.cpp@{Functions.cpp}!calculate\_distance@{calculate\_distance}}
+\index{calculate\_distance@{calculate\_distance}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{calculate\_distance()}{calculate\_distance()}}
+{\footnotesize\ttfamily float calculate\+\_\+distance (\begin{DoxyParamCaption}\item[{vector$<$ int $>$ \&}]{path,  }\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Calculates the total distance of a path. 
+
+@complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}2) 
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+{\em graph} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the distance of the path 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_abdf4c29787da9116130f1b7af547ce32}\label{_functions_8cpp_abdf4c29787da9116130f1b7af547ce32} 
+\index{Functions.cpp@{Functions.cpp}!find\_minimum@{find\_minimum}}
+\index{find\_minimum@{find\_minimum}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{find\_minimum()}{find\_minimum()}}
+{\footnotesize\ttfamily int find\+\_\+minimum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{int}]{id,  }\item[{vector$<$ int $>$}]{path }\end{DoxyParamCaption})}
+
+
+
+Function that returns the minimum distance between the edges not present in the path @complexity O(n) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+{\em id} & \\
+\hline
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns ret -\/\texorpdfstring{$>$}{>} the min distance obtained 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_a42f6a51c0ac43cb2a488d6ac3611f8eb}\label{_functions_8cpp_a42f6a51c0ac43cb2a488d6ac3611f8eb} 
+\index{Functions.cpp@{Functions.cpp}!insertNotUsed@{insertNotUsed}}
+\index{insertNotUsed@{insertNotUsed}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{insertNotUsed()}{insertNotUsed()}}
+{\footnotesize\ttfamily void insert\+Not\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{vector$<$ int $>$ \&}]{path,  }\item[{vector$<$ int $>$}]{not\+Used }\end{DoxyParamCaption})}
+
+
+
+Auxiliar function to insert the elements that are not yet present in the path @complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}2) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+{\em path} & \\
+\hline
+{\em not\+Used} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_functions_8cpp_acac5fd7153baa6dad093fb06d8847972}\label{_functions_8cpp_acac5fd7153baa6dad093fb06d8847972} 
+\index{Functions.cpp@{Functions.cpp}!join4@{join4}}
+\index{join4@{join4}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{join4()}{join4()}}
+{\footnotesize\ttfamily void join4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Function that calls all function needed in the 4.\+3 exercise and starts the timer and stops it prints the values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_functions_8cpp_aaf2c2cd208a3e3d42cde2a1a3f370131}\label{_functions_8cpp_aaf2c2cd208a3e3d42cde2a1a3f370131} 
+\index{Functions.cpp@{Functions.cpp}!linKernighan@{linKernighan}}
+\index{linKernighan@{linKernighan}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{linKernighan()}{linKernighan()}}
+{\footnotesize\ttfamily vector$<$ int $>$ lin\+Kernighan (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Applies the Lin-\/\+Kernighan heuristic algorithm to find an improved tour for the Traveling Salesperson Problem (TSP) on a given graph. 
+
+@complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}2) 
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the vector representing the best tour found by the algorithm. 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_a88f7452ce1ec400ca3e28e179297c7df}\label{_functions_8cpp_a88f7452ce1ec400ca3e28e179297c7df} 
+\index{Functions.cpp@{Functions.cpp}!min\_path@{min\_path}}
+\index{min\_path@{min\_path}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{min\_path()}{min\_path()}}
+{\footnotesize\ttfamily vector$<$ int $>$ min\+\_\+path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Function that goes through the graph and finds the minimum distance between the edges returns a vector with the path that adds the min distance @complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}3) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the minimum distance path 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_af262e10981f9e1efe05aafc20e09466d}\label{_functions_8cpp_af262e10981f9e1efe05aafc20e09466d} 
+\index{Functions.cpp@{Functions.cpp}!notUsed@{notUsed}}
+\index{notUsed@{notUsed}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{notUsed()}{notUsed()}}
+{\footnotesize\ttfamily vector$<$ int $>$ not\+Used (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{vector$<$ int $>$ \&}]{min }\end{DoxyParamCaption})}
+
+
+
+Function that gets a vector of elements not present in the path @complexity O(\+N) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+{\em min} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of elements not present in the path 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_ad5e002429adf8666e613c69fb96428fe}\label{_functions_8cpp_ad5e002429adf8666e613c69fb96428fe} 
+\index{Functions.cpp@{Functions.cpp}!PerformLinKernighanOptimization@{PerformLinKernighanOptimization}}
+\index{PerformLinKernighanOptimization@{PerformLinKernighanOptimization}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{PerformLinKernighanOptimization()}{PerformLinKernighanOptimization()}}
+{\footnotesize\ttfamily vector$<$ int $>$ Perform\+Lin\+Kernighan\+Optimization (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{const std\+::vector$<$ int $>$ \&}]{tour,  }\item[{int}]{u,  }\item[{int}]{v,  }\item[{vector$<$ vector$<$ float $>$ $>$}]{distances }\end{DoxyParamCaption})}
+
+
+
+Performs a local optimization step using Lin-\/\+Kernighan improvement rules on a given tour within the Lin-\/\+Kernighan heuristic algorithm. 
+
+@complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}2) 
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+{\em tour} & \\
+\hline
+{\em u} & \\
+\hline
+{\em v} & \\
+\hline
+{\em distances} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the new tour obtained after applying the Lin-\/\+Kernighan optimization rules. 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_a34b392c552c260b1480085de813e7eb5}\label{_functions_8cpp_a34b392c552c260b1480085de813e7eb5} 
+\index{Functions.cpp@{Functions.cpp}!removeDuplicates@{removeDuplicates}}
+\index{removeDuplicates@{removeDuplicates}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{removeDuplicates()}{removeDuplicates()}}
+{\footnotesize\ttfamily void remove\+Duplicates (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+
+
+Function to remove elements duplicated in a vector @complexity O(\+N) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_functions_8cpp_aa1e12d2bd8b6d24bb9b34f6481872f36}\label{_functions_8cpp_aa1e12d2bd8b6d24bb9b34f6481872f36} 
+\index{Functions.cpp@{Functions.cpp}!triangular@{triangular}}
+\index{triangular@{triangular}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{triangular()}{triangular()}}
+{\footnotesize\ttfamily vector$<$ int $>$ triangular (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{vector$<$ int $>$ \&}]{min }\end{DoxyParamCaption})}
+
+
+
+Function that checks if it is faster to go from A to B or from A to B to C if it is faster, then remove B. 
+
+After removing, checks all the elements not present in the path if the two lightest edges are consecutive in the path adds it in the middle, and checks this first for every element if there is still elements missing in the path, does brute force for the best solution @complexity O(\+N\texorpdfstring{$^\wedge$}{\string^}2) 
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+{\em min} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector that contains the path obtained 
+\end{DoxyReturn}
+\Hypertarget{_functions_8cpp_a8271be34923594678165804f21c3aaf6}\label{_functions_8cpp_a8271be34923594678165804f21c3aaf6} 
+\index{Functions.cpp@{Functions.cpp}!triangularApproximationH@{triangularApproximationH}}
+\index{triangularApproximationH@{triangularApproximationH}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{triangularApproximationH()}{triangularApproximationH()}}
+{\footnotesize\ttfamily void triangular\+ApproximationH (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Exercise 4.\+2 main function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_functions_8cpp_a3b601d2d88bd7c66e0128339b76f76ac}\label{_functions_8cpp_a3b601d2d88bd7c66e0128339b76f76ac} 
+\index{Functions.cpp@{Functions.cpp}!tsp@{tsp}}
+\index{tsp@{tsp}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{tsp()}{tsp()}}
+{\footnotesize\ttfamily float tsp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_graph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Main function for the TSP of exercise 4.\+1 @complexity O(n) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the tie taken by backtracking, the min path and min distance. 
+\end{DoxyReturn}
